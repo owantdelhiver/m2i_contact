@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a th:href="@{/secured/contact}">Mes contacts</a></li>
+    <li><a th:href="@{/secured/contact/create}">Ajouter un contact</a></li>
+  </ul>
+</nav>
+  <h1>Modification du contact <span th:text="${contact.id}"></span></h1>
+<form action="#" th:action="@{/secured/contact/edit}" th:object="${contact}" method="post">
+  <p>Prenom: <input type="text" th:field="*{prenom}" /></p>
+  <p>Nom: <input type="text" th:field="*{nom}" /></p>
+
+  <p>Surnom: <input type="text" th:field="*{surnom}" /></p>
+  <p><input type="submit" value="Submit" /></p>
+</form>
+</body>
+</html>
