@@ -54,4 +54,9 @@ public class ContactWebController {
         model.addAttribute("contact", contactService.findById(id_contact));
         return "edit_contact";
     }
+
+    @PostMapping("/contact/edit")
+    public String editContactPost(Contact contat) {
+        return "redirect:/secured/contact";
+    }
 }
