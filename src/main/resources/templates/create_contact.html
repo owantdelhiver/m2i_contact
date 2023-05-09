@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="#" th:action="@{/secured/contact/create(id=${user.id})}" th:object="${contact}" method="post">
+        <p>Prenom: <input type="text" th:field="*{prenom}" /></p>
+        <p>Nom: <input type="text" th:field="*{nom}" /></p>
+
+        <p>Surnom: <input type="text" th:field="*{surnom}" /></p>
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+</body>
+</html>

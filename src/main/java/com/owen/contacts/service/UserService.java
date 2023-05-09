@@ -18,4 +18,8 @@ public class UserService {
     public User findById(int id) {
         return userRepository.findById(id).get();
     }
+
+    public void save(User user) {
+        userRepository.save(user);
+    }
 }
