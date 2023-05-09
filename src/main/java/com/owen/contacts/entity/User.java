@@ -23,4 +23,12 @@ public class User extends UserAbstract{
     public void setMot_de_passe(String mot_de_passe) {
         this.mot_de_passe = mot_de_passe;
     }
+
+    public List<Contact> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(List<Contact> contacts) {
+        this.contacts = contacts;
+    }
 }
