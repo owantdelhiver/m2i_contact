@@ -48,4 +48,10 @@ public class ContactWebController {
         contactService.delete(id_contact);
         return "redirect:/secured/contact";
     }
+
+    @GetMapping("/contact/edit")
+    public String editContact(@PathParam("id_contact") int id_contact, Model model) {
+        model.addAttribute("contact", contactService.findById(id_contact));
+        return "edit_contact";
+    }
 }

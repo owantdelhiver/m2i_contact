@@ -10,8 +10,8 @@
 
     <nav>
         <ul>
-            <li><a href="http://localhost:8080/secured/contact">Mes contacts</a></li>
-            <li><a href="http://localhost:8080/secured/contact/create">Ajouter un contact</a></li>
+            <li><a th:href="@{/secured/contact}">Mes contacts</a></li>
+            <li><a th:href="@{/secured/contact/create}">Ajouter un contact</a></li>
         </ul>
     </nav>
 
@@ -33,7 +33,7 @@
                 <td><span th:text="${contact.prenom}"></span></td>
                 <td><span th:text="${contact.telephone}"></span></td>
                 <td>
-                    <a class="btn btn-outline-warning" href="#" role="button">Edit</a>
+                    <a class="btn btn-outline-warning" th:href="@{/secured/contact/edit(id_contact=${contact.id})}" role="button">Edit</a>
                     <a class="btn btn-outline-danger" th:href="@{/secured/contact/delete(id_contact=${contact.id})}" role="button">Delete</a>
                 </td>
             </tr>

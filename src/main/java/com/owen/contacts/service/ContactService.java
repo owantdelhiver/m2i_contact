@@ -15,6 +15,10 @@ public class ContactService {
     public List<Contact> findAll() {
         return contactRepository.findAll();
     }
+
+    public Contact findById(int id) {
+        return contactRepository.findById(id).get();
+    }
     public void delete(int id) {
         contactRepository.deleteById(id);
     }
