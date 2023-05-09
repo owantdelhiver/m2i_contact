@@ -5,6 +5,13 @@
     <title>Title</title>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="http://localhost:8080/secured/contact?id_user=1">Mes contacts</a></li>
+            <li><a href="http://localhost:8080/secured/contact/create?id_user=1">Ajouter un contact</a></li>
+        </ul>
+    </nav>
+
     <form action="#" th:action="@{/secured/contact/create(id=${user.id})}" th:object="${contact}" method="post">
         <p>Prenom: <input type="text" th:field="*{prenom}" /></p>
         <p>Nom: <input type="text" th:field="*{nom}" /></p>

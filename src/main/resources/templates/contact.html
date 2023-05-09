@@ -3,16 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
     <nav>
         <ul>
-            <li><a href="#">Mes contacts</a></li>
+            <li><a href="http://localhost:8080/secured/contact">Mes contacts</a></li>
+            <li><a href="http://localhost:8080/secured/contact/create">Ajouter un contact</a></li>
         </ul>
     </nav>
 
-    <ul th:each="contact : ${user.contacts}">
-        <li><span th:text="${contact.nom}"></span></li>
-    </ul>
+    <h1>Mes contacts</h1>
+    <table class="table table-striped w-auto">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">Téléphone</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="contact : ${user.contacts}">
+                <td><span th:text="${contact.id}"></span></td>
+                <td><span th:text="${contact.nom}"></span></td>
+                <td><span th:text="${contact.prenom}"></span></td>
+                <td><span th:text="${contact.telephone}"></span></td>
+                <td>
+                    <a class="btn btn-outline-warning" href="#" role="button">Edit</a>
+                    <a class="btn btn-outline-danger" th:href="@{/secured/contact/delete(id_contact=${contact.id})}" role="button">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
