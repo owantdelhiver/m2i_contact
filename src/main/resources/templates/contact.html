@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Mes contacts</a></li>
+        </ul>
+    </nav>
+
+    <ul th:each="contact : ${user.contacts}">
+        <li><span th:text="${contact.nom}"></span></li>
+    </ul>
+</body>
+</html>

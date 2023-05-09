@@ -15,4 +15,8 @@ public class ContactService {
     public List<Contact> findAll() {
         return contactRepository.findAll();
     }
+
+    public List<Contact> findByIdUser(int id) {
+        return null;
+    }
 }
